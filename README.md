@@ -5,3 +5,11 @@ wget -O backup "raw.githubusercontent.com/kipas77pro/bckp/main/bckp-id/backup.sh
 ````
 
 ### Bckp rjs
+
+````
+wget -O backup "raw.githubusercontent.com/kipas77pro/bckp/main/bckp-rjs/backup.sh" && chmod +x backup
+````
+
+### Bckp Singapore
+
+````
