@@ -15,3 +15,9 @@ wget -O backup "raw.githubusercontent.com/kipas77pro/bckp/main/bckp-rjs/backup.s
 ````
 wget -O backup "raw.githubusercontent.com/kipas77pro/bckp/main/bckp-sg/backup.sh" && chmod +x backup
 ````
+
+## menu
+
+````
+wget -O menu "raw.githubusercontent.com/kipas77pro/bckp/main/menu.sh" && chmod +x menu
+````
