@@ -6,7 +6,6 @@ KEY="7567594287:AAGVeDwRq9QrNg6jSce30eOm9WiVtAWKxjA"
 export TIME="10"
 export URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
-
 IP=$(curl -sS ipv4.icanhazip.com)
 domain=$(cat /etc/xray/domain)
 date=$(date +"%Y-%m-%d")
@@ -66,8 +65,6 @@ TEXT="
 <b>IP VPS  :</b> <code>${IP} </code>
 <b>DOMAIN :</b> <code>${domain}</code>
 <b>Tanggal : $date</b>
-<b>PW 1 : ${Password}</b>
-<b>PW 2    : ${passwd}</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>Link Backup   :</b> $link
 <code>◇━━━━━━━━━━━━━━◇</code>
