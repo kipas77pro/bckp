@@ -78,8 +78,9 @@ zip -rP "$InputPass" "$Name-$domain-$IP-$dateToday.zip" backup >/dev/null 2>&1
         --url "https://api.telegram.org/bot${bottoken}/sendMessage?chat_id=${adminid}&text=File Path : <code>${filePath}</code>&parse_mode=html" &>/dev/null
 clear
     echo -e "[ ${green}INFO${NC} ] • Completed Backup... "
-    echo -e "${green}File ID   :${NC} ${fileId}"
-    echo -e "${green}File Path :${NC} ${filePath}"
+    echo -e "${green}File ID   :${NC} ${link}"
+    echo -e "${green}File Path :${NC} ${date}"
+    echo -e "${green}File Path :${NC} ${password}"
     rm -rf /root/backup
     rm -r /root/$Name-$domain-$IP-$dateToday.zip
     rm -f /root/t1
