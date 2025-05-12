@@ -66,8 +66,8 @@ TEXT="
 <b>IP VPS  :</b> <code>${IP} </code>
 <b>DOMAIN :</b> <code>${domain}</code>
 <b>Tanggal : $date</b>
-<b>PW 1 :</b> ${Password}</b>
-<b>PW 2    :</b> ${passwd}</b>
+<b>PW 1 : ${Password}</b>
+<b>PW 2    : ${passwd}</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>Link Backup   :</b> $link
 <code>◇━━━━━━━━━━━━━━◇</code>
