@@ -15,7 +15,6 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 IP=$(wget -qO- icanhazip.com)
 dateToday=$(date +"%Y-%m-%d")
 clear
-botBackup() {
     switch=on
     bottoken=7567594287:AAGVeDwRq9QrNg6jSce30eOm9WiVtAWKxjA
     adminid=6430177985
