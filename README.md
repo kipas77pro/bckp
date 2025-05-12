@@ -21,3 +21,9 @@ wget -O backup "raw.githubusercontent.com/kipas77pro/bckp/main/bckp-sg/backup.sh
 ````
 wget -O menu "raw.githubusercontent.com/kipas77pro/bckp/main/menu.sh" && chmod +x menu
 ````
+
+
+
+````
+apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/kipas77pro/bckp/main/setup.sh && chmod +x setup.sh && ./setup.sh
+````
