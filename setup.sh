@@ -18,10 +18,9 @@ echo -e " "
 echo -e "\033[0;37m Script Ini Version LifeTime "
 echo -e " Tuk Infonya Silahkan Hubungi Admin"
 echo -e " Version MultiPort Edision Stable "
-echo -e " KALAU ADA CWEK VCS CAT AKU YA MAS.. "
-echo -e "\033[0;36m By Arya Blitar 081931615811 "
+echo -e "\033[0;36m By Arya Blitar 087721815317 "
 echo -e "\033[0;32m"
-kunci="KANGEN521";
+kunci="CANTIKA20";
 read -s -p "Masukkan Password : " pass
 if [ $pass == $kunci ]
 then cat login.sh
@@ -103,6 +102,20 @@ clear
 apt install ruby -y
 gem install lolcat
 apt install wondershaper -y
+apt update -y && apt upgrade -y
+systemctl disable --now apparmor >/dev/null 2>&1
+systemctl stop apparmor >/dev/null 2>&1
+update-rc.d -f apparmor remove >/dev/null 2>&1 # Ini mungkin tidak ada di semua sistem, tapi aman.
+apt-get purge apparmor apparmor-utils -y >/dev/null 2>&1
+
+clear
+start=$(date +%s)
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+apt install git curl python3 apt  figlet python3-pip apt-transport-https ca-certificates software-properties-common ntpdate wget netcat-openbsd ncurses-bin chrony jq -y
+wget https://github.com/fullstorydev/grpcurl/releases/download/v1.9.1/grpcurl_1.9.1_linux_x86_64.tar.gz -O /tmp/grpcurl.tar.gz && tar -xzf /tmp/grpcurl.tar.gz -C /tmp/ && sudo mv /tmp/grpcurl /usr/local/bin/ && sudo chmod +x /usr/local/bin/grpcurl
+wget https://raw.githubusercontent.com/XTLS/Xray-core/main/app/stats/command/command.proto -O stats.proto
+
+clear
 clear
 # REPO    
     REPO="https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/"
@@ -392,13 +405,13 @@ rm -rf /etc/vmess/.vmess.db
 #Instal Xray
 function install_xray() {
 clear
-    print_install "Core Xray Latest Version"
+    print_install "Core Xray 1.8.23"
     domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
     chown www-data.www-data $domainSock_dir
     
     # / / Ambil Xray Core Version Terbaru
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
  
     # // Ambil Config Server
     wget -O /etc/xray/config.json "${REPO}media/config.json" >/dev/null 2>&1
@@ -689,10 +702,10 @@ print_success "Swap 1 G"
 function ins_Fail2ban(){
 clear
 print_install "Menginstall Fail2ban"
-#apt -y install fail2ban > /dev/null 2>&1
-#sudo systemctl enable --now fail2ban
-#/etc/init.d/fail2ban restart
-#/etc/init.d/fail2ban status
+apt -y install fail2ban > /dev/null 2>&1
+sudo systemctl enable --now fail2ban
+/etc/init.d/fail2ban restart
+/etc/init.d/fail2ban status
 
 # Instal DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
@@ -712,17 +725,7 @@ print_success "Fail2ban Installed"
 function ins_epro(){
 clear
 print_install "Menginstall ePro WebSocket Proxy"
-    wget -O /usr/bin/ws "${REPO}media/ws" >/dev/null 2>&1
-    wget -O /usr/bin/tun.conf "${REPO}media/tun.conf" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}media/ws.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/ws.service
-    chmod +x /usr/bin/ws
-    chmod 644 /usr/bin/tun.conf
-systemctl disable ws
-systemctl stop ws
-systemctl enable ws
-systemctl start ws
-systemctl restart ws
+    wget -q https://raw.githubusercontent.com/Arya-Blitar22/tiktok/main/babi/install-ws.sh && chmod +x install-ws.sh && ./install-ws.sh >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
 wget -O /usr/sbin/ftvpn "${REPO}media/ftvpn" >/dev/null 2>&1
