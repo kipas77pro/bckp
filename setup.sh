@@ -12,7 +12,9 @@ GRAY="\e[1;30m"
 NC='\e[0m'
 red='\e[1;31m'
 green='\e[0;32m'
+purple="\e[0;33m"
 # ===================
+echo -e " "
 echo -e " "
 echo -e "\033[0;37m Script Ini Version LifeTime "
 echo -e " Tuk Infonya Silahkan Hubungi Admin"
@@ -26,14 +28,13 @@ then cat login.sh
 clear
 else
 echo -e "\033[0;31m Password Salah Sayank...!!"
-echo -e "\033[0;32m Segera Hub. Admin 087721815317 "
+echo -e "\033[0;32m Segera Hub. Admin 081931615811 "
 exit
 fi
 echo -e "\033[0;32m SELAMAT ANDA BERHASIL MASUK & INSTALL"
 sleep 3
 clear
-clear
-# // Exporint IP AddressInformation
+  # // Exporint IP AddressInformation
 export IP=$( curl -sS icanhazip.com )
 
 # // Clear Data
@@ -46,12 +47,10 @@ echo -e "${YELLOW}----------------------------------------------------------${NC
 echo -e " Dev > Script ${YELLOW}(${NC}${green} Stable Edition ${NC}${YELLOW})${NC}"
 echo -e " This Will Quick Setup VPN Server On Your Server"
 echo -e " Auther : ${green}St Pusat ${NC}"
-echo -e " © Blitar Udanawu Blitar Jatim ${YELLOW}(${NC} 2025 ${YELLOW})${NC}"
+echo -e " � Blitar Udanawu Blitar Jatim ${YELLOW}(${NC} 2025 ${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
 sleep 2
-###### IZIN SC 
-
 # // Checking Os Architecture
 if [[ $( uname -m | awk '{print $1}' ) == "x86_64" ]]; then
     echo -e "${OK} Your Architecture Is Supported ( ${green}$( uname -m )${NC} )"
@@ -95,16 +94,14 @@ green='\e[0;32m'
 NC='\e[0m'
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "\e[32mloading...\e[0m"
 clear
 apt install ruby -y
 gem install lolcat
 apt install wondershaper -y
 
 clear
-clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/"
+    REPO="https://raw.githubusercontent.com/Arya-Blitar22/pusatA1/main/"
 
 ####
 start=$(date +%s)
@@ -201,7 +198,6 @@ else
 fi
 }
 
-# GEO PROJECT
 clear
 function nginx_install() {
     # // Checking System
@@ -237,6 +233,8 @@ function base_package() {
     apt install ntpdate -y
     ntpdate pool.ntp.org
     apt install sudo -y
+    apt install ruby -y 
+    gem install lolcat
     sudo apt-get clean all
     sudo apt-get autoremove -y
     sudo apt-get install -y debconf-utils
@@ -257,25 +255,21 @@ clear
     echo -e "   .----------------------------------."
 echo -e "   |\e[1;32mPlease Select a Domain Type Below \e[0m|"
 echo -e "   '----------------------------------'"
-echo -e "     \e[1;32m1)\e[0m Menggunakan Domain Sendiri ( Usahakan )"
-echo -e "     \e[1;32m2)\e[0m Menggunakan Domain Random"
+echo -e "     \e[1;32m1)\e[0m Menggunakan Domain Sendiri"
+echo -e "     \e[1;32m2)\e[0m Menggunakan Domain Script"
 echo -e "   ------------------------------------"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
 echo ""
 if [[ $host == "1" ]]; then
 echo -e "   \e[1;32mPlease Enter Your Subdomain $NC"
-echo -e "\033[1;96m___________________________________________\033[0m"
-echo -e ""
-read -p "   Masukan Domain: " host1
-echo -e ""
-echo -e "\033[1;96m___________________________________________\033[0m"
+read -p "   Subdomain: " host1
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 echo $host1 > /etc/xray/domain
 echo $host1 > /root/domain
 echo ""
 elif [[ $host == "2" ]]; then
 #install cf
-wget ${REPO}media/cf.sh && chmod +x cf.sh && ./cf.sh
+wget ${REPO}files/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
 clear
 else
@@ -287,7 +281,6 @@ clear
 clear
 #GANTI PASSWORD DEFAULT
 restart_system(){
-#IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m" 
 clear
@@ -306,18 +299,18 @@ MODEL2=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | s
 MYIP=$(curl -sS ipv4.icanhazip.com)
 
 TEXT="
-<code>━━━━━━━━━━━━━━━━━━━━</code>
-<code>⚠️ AUTOSCRIPT ST-PUSAT⚠️</code>
-<code>━━━━━━━━━━━━━━━━━━━━</code>
+<code></code>
+<code> AUTOSCRIPT HAPROXY PUSAT A1 </code>
+<code></code>
 <code>TIME : </code><code>${TIME} WIB</code>
 <code>DOMAIN : </code><code>${domain}</code>
 <code>IP : </code><code>${MYIP}</code>
 <code>ISP : </code><code>${ISP} $CITY</code>
 <code>OS LINUX : </code><code>${MODEL2}</code>
 <code>RAM : </code><code>${RAMMS} MB</code>
-<code>━━━━━━━━━━━━━━━━━━━━</code>
+<code></code>
 <i> Notifikasi Installer Script...</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"🔥ᴏʀᴅᴇʀ","url":"https://t.me/Arya77pro"},{"text":"🔥GRUP","url":"https://t.me/Arya77pro"}]]}'
+"'&reply_markup={"inline_keyboard":[[{"text":"","url":"https://t.me/Arya77pro"},{"text":"GRUP","url":"https://t.me/Arya77pro"}]]}'
 
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
@@ -391,32 +384,32 @@ rm -rf /etc/vmess/.vmess.db
 #Instal Xray
 function install_xray() {
 clear
-    print_install "Core Xray 1.8.23"
+    print_install "Core Xray new Latest Version"
     domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
     chown www-data.www-data $domainSock_dir
     
     # / / Ambil Xray Core Version Terbaru
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.23
- 
+
     # // Ambil Config Server
-    wget -O /etc/xray/config.json "${REPO}media/config.json" >/dev/null 2>&1
-    wget -O /etc/systemd/system/runn.service "${REPO}media/runn.service" >/dev/null 2>&1
+    wget -O /etc/xray/config.json "${REPO}config/config.json" >/dev/null 2>&1
+    wget -O /etc/systemd/system/runn.service "${REPO}files/runn.service" >/dev/null 2>&1
     #chmod +x /usr/local/bin/xray
     domain=$(cat /etc/xray/domain)
     IPVS=$(cat /etc/xray/ipvps)
-    print_success "Core Xray Latest Version"
+    print_success "Core Xray update Latest Version"
     
     # Settings UP Nginix Server
     clear
     curl -s ipinfo.io/city >>/etc/xray/city
     curl -s ipinfo.io/org | cut -d " " -f 2-10 >>/etc/xray/isp
     print_install "Memasang Konfigurasi Packet"
-    wget -O /etc/haproxy/haproxy.cfg "https://raw.githubusercontent.com/Arya-Blitar22/cok/main/fire/haproxy.cfg" >/dev/null 2>&1
-    wget -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/Arya-Blitar22/cok/main/fire/xray.conf" >/dev/null 2>&1
+    wget -O /etc/haproxy/haproxy.cfg "${REPO}config/haproxy.cfg" >/dev/null 2>&1
+    wget -O /etc/nginx/conf.d/xray.conf "${REPO}config/xray.conf" >/dev/null 2>&1
     sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
-    curl ${REPO}media/nginx.conf > /etc/nginx/nginx.conf
+    curl ${REPO}config/nginx.conf > /etc/nginx/nginx.conf
     
 cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
 
@@ -451,7 +444,7 @@ print_success "Konfigurasi Packet"
 function ssh(){
 clear
 print_install "Memasang Password SSH"
-    wget -O /etc/pam.d/common-password "${REPO}media/password"
+    wget -O /etc/pam.d/common-password "${REPO}files/password"
 chmod +x /etc/pam.d/common-password
 
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration
@@ -524,8 +517,8 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service Limit IP & Quota"
-wget -q https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/media/limmit && chmod +x limmit && ./limmit
-wget -q https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/media/udp-custom.sh && chmod +x udp-custom.sh && ./udp-custom.sh
+wget -q https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/config/limmit && chmod +x limmit && ./limmit
+wget -q https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/config/udp-custom.sh && chmod +x udp-custom.sh && ./udp-custom.sh
 wget -q https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/slowdns/noobzvpns.zip
 unzip noobzvpns.zip
 bash install.sh
@@ -534,11 +527,11 @@ systemctl restart noobzvpns
 
 # // Installing UDP Mini
 mkdir -p /usr/local/kyt/
-wget -q -O /usr/local/kyt/udp-mini "${REPO}media/udp-mini"
+wget -q -O /usr/local/kyt/udp-mini "${REPO}files/udp-mini"
 chmod +x /usr/local/kyt/udp-mini
-wget -q -O /etc/systemd/system/udp-mini-1.service "${REPO}media/udp-mini-1.service"
-wget -q -O /etc/systemd/system/udp-mini-2.service "${REPO}media/udp-mini-2.service"
-wget -q -O /etc/systemd/system/udp-mini-3.service "${REPO}media/udp-mini-3.service"
+wget -q -O /etc/systemd/system/udp-mini-1.service "${REPO}files/udp-mini-1.service"
+wget -q -O /etc/systemd/system/udp-mini-2.service "${REPO}files/udp-mini-2.service"
+wget -q -O /etc/systemd/system/udp-mini-3.service "${REPO}files/udp-mini-3.service"
 systemctl disable udp-mini-1
 systemctl stop udp-mini-1
 systemctl enable udp-mini-1
@@ -558,7 +551,7 @@ function ssh_slow(){
 clear
 # // Installing UDP Mini
 print_install "Memasang modul SlowDNS Server"
-    wget -q -O /tmp/nameserver "${REPO}slowdns/nameserver" >/dev/null 2>&1
+    wget -q -O /tmp/nameserver "${REPO}files/nameserver" >/dev/null 2>&1
     chmod +x /tmp/nameserver
     bash /tmp/nameserver | tee /root/install.log
  print_success "SlowDNS"
@@ -568,7 +561,7 @@ clear
 function ins_SSHD(){
 clear
 print_install "Memasang SSHD"
-wget -q -O /etc/ssh/sshd_config "${REPO}media/sshd" >/dev/null 2>&1
+wget -q -O /etc/ssh/sshd_config "${REPO}files/sshd" >/dev/null 2>&1
 chmod 700 /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 systemctl restart ssh
@@ -582,14 +575,13 @@ clear
 print_install "Menginstall Dropbear"
 # // Installing Dropbear
 apt-get install dropbear -y > /dev/null 2>&1
-wget -O /etc/issue.net "https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/media/issue.net"
-wget -q -O /etc/default/dropbear "${REPO}media/dropbear.conf"
+wget -O /etc/kyt.txt "https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/files/issue.net"
+wget -q -O /etc/default/dropbear "${REPO}config/dropbear.conf"
 chmod +x /etc/default/dropbear
 /etc/init.d/dropbear restart
 /etc/init.d/dropbear status
 print_success "Dropbear"
 }
-
 clear
 function ins_vnstat(){
 clear
@@ -618,7 +610,7 @@ function ins_openvpn(){
 clear
 print_install "Menginstall OpenVPN"
 #OpenVPN
-wget ${REPO}media/openvpn &&  chmod +x openvpn && ./openvpn
+wget ${REPO}files/openvpn &&  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
 print_success "OpenVPN"
 }
@@ -629,7 +621,7 @@ print_install "Memasang Backup Server"
 #BackupOption
 apt install rclone -y
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "${REPO}media/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "${REPO}config/rclone.conf"
 #Install Wondershaper
 cd /bin
 git clone  https://github.com/magnific0/wondershaper.git
@@ -655,7 +647,7 @@ password jokerman77
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
-wget -q -O /etc/ipserver "${REPO}media/ipserver" && bash /etc/ipserver
+wget -q -O /etc/ipserver "${REPO}files/ipserver" && bash /etc/ipserver
 print_success "Backup Server"
 }
 
@@ -681,7 +673,7 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc sourcestats -v
     chronyc tracking -v
     
-    wget ${REPO}media/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
+    wget ${REPO}files/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 print_success "Swap 1 G"
 }
 
@@ -703,23 +695,28 @@ fi
 
 clear
 # banner
-echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
-sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
-print_success "Fail2ban Installed"
+echo "Banner /etc/kyt.txt" >>/etc/ssh/sshd_config
+sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/kyt.txt"@g' /etc/default/dropbear
+print_success "Fail2ban"
 }
 
 function ins_epro(){
 clear
 print_install "Menginstall ePro WebSocket Proxy"
-    wget -O /usr/bin/ws "${REPO}media/ws" >/dev/null 2>&1
-    wget -O /usr/bin/tun.conf "${REPO}media/tun.conf" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}media/ws.service" >/dev/null 2>&1
+    wget -O /usr/bin/ws "${REPO}files/ws" >/dev/null 2>&1
+    wget -O /usr/bin/tun.conf "${REPO}config/tun.conf" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws.service "${REPO}files/ws.service" >/dev/null 2>&1
     chmod +x /etc/systemd/system/ws.service
     chmod +x /usr/bin/ws
     chmod 644 /usr/bin/tun.conf
+systemctl disable ws
+systemctl stop ws
+systemctl enable ws
+systemctl start ws
+systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-wget -O /usr/sbin/ftvpn "${REPO}media/ftvpn" >/dev/null 2>&1
+wget -O /usr/sbin/ftvpn "${REPO}files/ftvpn" >/dev/null 2>&1
 chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
@@ -779,7 +776,7 @@ print_success "All Packet"
 function menu(){
     clear
     print_install "Memasang Menu Packet"
-    wget https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/menu/menu.zip
+    wget ${REPO}menu/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin
@@ -800,7 +797,7 @@ fi
 mesg n || true
 menu
 EOF
-
+mkdir -p /root/.info
 cat >/etc/cron.d/xp_all <<-END
 		SHELL=/bin/sh
 		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
@@ -827,6 +824,11 @@ cat >/etc/cron.d/xp_all <<-END
 		SHELL=/bin/sh
 		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 		*/2 * * * * root /usr/local/sbin/limit-ip
+        END
+    cat >/etc/cron.d/lim-ip-ssh <<-END
+		SHELL=/bin/sh
+		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+		*/1 * * * * root /usr/local/sbin/limit-ip-ssh
 	END
     cat >/etc/cron.d/limit_ip2 <<-END
 		SHELL=/bin/sh
@@ -839,7 +841,6 @@ cat >/etc/cron.d/xp_all <<-END
     cat >/home/daily_reboot <<-END
 		5
 	END
-
 cat >/etc/systemd/system/rc-local.service <<EOF
 [Unit]
 Description=/etc/rc.local
@@ -910,13 +911,16 @@ clear
     ssh
     udp_mini
     ssh_slow
+    ins_udpSSH
     ins_SSHD
     ins_dropbear
     ins_vnstat
     ins_openvpn
     ins_backup
     ins_swab
+    ins_Fail2ban
     ins_epro
+    noobzvpn
     ins_restart
     menu
     profile
@@ -935,7 +939,51 @@ rm -rf /root/domain
 #sudo hostnamectl set-hostname $user
 secs_to_human "$(($(date +%s) - ${start}))"
 sudo hostnamectl set-hostname $username
-echo -e "${green} Script Successfull Installed"
 echo ""
+echo "------------------------------------------------------------"
+echo ""
+echo "   >>> Service & Port"  | tee -a log-install.txt
+echo "   - OpenSSH                 : 22, 53, 2222, 2269"  | tee -a log-install.txt
+echo "   - SSH Websocket           : 80" | tee -a log-install.txt
+echo "   - SSH SSL Websocket       : 443" | tee -a log-install.txt
+#echo "   - Stunnel5                : 222, 777" | tee -a log-install.txt
+echo "   - Dropbear                : 109, 143" | tee -a log-install.txt
+echo "   - Badvpn                  : 7100-7300" | tee -a log-install.txt
+echo "   - Nginx                   : 81" | tee -a log-install.txt
+echo "   - XRAY  Vmess TLS         : 443" | tee -a log-install.txt
+echo "   - XRAY  Vmess None TLS    : 80" | tee -a log-install.txt
+echo "   - XRAY  Vless TLS         : 443" | tee -a log-install.txt
+echo "   - XRAY  Vless None TLS    : 80" | tee -a log-install.txt
+echo "   - Trojan GRPC             : 443" | tee -a log-install.txt
+echo "   - Trojan WS               : 443" | tee -a log-install.txt
+#echo "   - Trojan GO               : 443" | tee -a log-install.txt
+echo "   - Sodosok WS/GRPC         : 443" | tee -a log-install.txt
+echo "   - SLOWDNS                 : 53"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
+echo "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
+#echo "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
+echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
+echo "   - IPtables                : [ON]"  | tee -a log-install.txt
+echo "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
+echo "   - IPv6                    : [OFF]"  | tee -a log-install.txt
+echo "   - Autobackup Data" | tee -a log-install.txt
+echo "   - AutoKill Multi Login User" | tee -a log-install.txt
+echo "   - Auto Delete Expired Account" | tee -a log-install.txt
+echo "   - Fully automatic script" | tee -a log-install.txt
+echo "   - VPS settings" | tee -a log-install.txt
+echo "   - Admin Control" | tee -a log-install.txt
+echo "   - Change port" | tee -a log-install.txt
+echo "   - Restore Data" | tee -a log-install.txt
+echo "   - Full Orders For Various Services" | tee -a log-install.txt
+echo ""
+echo ""
+echo "------------------------------------------------------------"
+echo ""
+echo "===============-[ SCRIPT PUSAT BLITAR ]-==============="
+echo -e ""
+echo ""
+echo "" | tee -a log-install.txt
+sleep 1
 read -p "$( echo -e "Press ${YELLOW}[ ${NC}${YELLOW}Enter${NC} ${YELLOW}]${NC} For reboot") "
 reboot
