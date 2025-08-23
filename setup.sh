@@ -13,7 +13,25 @@ NC='\e[0m'
 red='\e[1;31m'
 green='\e[0;32m'
 # ===================
-
+echo -e " "
+echo -e "\033[0;37m Script Ini Version LifeTime "
+echo -e " Tuk Infonya Silahkan Hubungi Admin"
+echo -e " Version MultiPort Edision Stable "
+echo -e "\033[0;36m By Arya Blitar 087721815317 "
+echo -e "\033[0;32m"
+kunci="CANTIKA20";
+read -s -p "Masukkan Password : " pass
+if [ $pass == $kunci ]
+then cat login.sh
+clear
+else
+echo -e "\033[0;31m Password Salah Sayank...!!"
+echo -e "\033[0;32m Segera Hub. Admin 087721815317 "
+exit
+fi
+echo -e "\033[0;32m SELAMAT ANDA BERHASIL MASUK & INSTALL"
+sleep 3
+clear
 clear
 # // Exporint IP AddressInformation
 export IP=$( curl -sS icanhazip.com )
@@ -394,7 +412,7 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
     curl -s ipinfo.io/city >>/etc/xray/city
     curl -s ipinfo.io/org | cut -d " " -f 2-10 >>/etc/xray/isp
     print_install "Memasang Konfigurasi Packet"
-    wget -O /etc/haproxy/haproxy.cfg "https://raw.githubusercontent.com/kipas77pro/bckp/main/haproxy.cfg" >/dev/null 2>&1
+    wget -O /etc/haproxy/haproxy.cfg "https://raw.githubusercontent.com/Arya-Blitar22/cok/main/fire/haproxy.cfg" >/dev/null 2>&1
     wget -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/Arya-Blitar22/cok/main/fire/xray.conf" >/dev/null 2>&1
     sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
