@@ -13,27 +13,7 @@ NC='\e[0m'
 red='\e[1;31m'
 green='\e[0;32m'
 # ===================
-echo -e " "
-echo -e " "
-echo -e "\033[0;37m Script Ini Version LifeTime "
-echo -e " Tuk Infonya Silahkan Hubungi Admin"
-echo -e " Version MultiPort Edision Stable "
-echo -e "\033[0;36m By Arya Blitar 087721815317 "
-echo -e "\033[0;32m"
-kunci="CANTIKA20";
-read -s -p "Masukkan Password : " pass
-if [ $pass == $kunci ]
-then cat login.sh
-clear
-else
-echo -e "\033[0;31m Password Salah Sayank...!!"
-echo -e " "
-echo -e "\033[0;32m Segera Hub. Admin 081931615811 "
-echo -e " "
-exit
-fi
-echo -e "\033[0;32m SELAMAT ANDA BERHASIL MASUK & INSTALL"
-sleep 3
+
 clear
 # // Exporint IP AddressInformation
 export IP=$( curl -sS icanhazip.com )
@@ -102,18 +82,6 @@ clear
 apt install ruby -y
 gem install lolcat
 apt install wondershaper -y
-apt update -y && apt upgrade -y
-systemctl disable --now apparmor >/dev/null 2>&1
-systemctl stop apparmor >/dev/null 2>&1
-update-rc.d -f apparmor remove >/dev/null 2>&1 # Ini mungkin tidak ada di semua sistem, tapi aman.
-apt-get purge apparmor apparmor-utils -y >/dev/null 2>&1
-
-clear
-start=$(date +%s)
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-apt install git curl python3 apt  figlet python3-pip apt-transport-https ca-certificates software-properties-common ntpdate wget netcat-openbsd ncurses-bin chrony jq -y
-wget https://github.com/fullstorydev/grpcurl/releases/download/v1.9.1/grpcurl_1.9.1_linux_x86_64.tar.gz -O /tmp/grpcurl.tar.gz && tar -xzf /tmp/grpcurl.tar.gz -C /tmp/ && sudo mv /tmp/grpcurl /usr/local/bin/ && sudo chmod +x /usr/local/bin/grpcurl
-wget https://raw.githubusercontent.com/XTLS/Xray-core/main/app/stats/command/command.proto -O stats.proto
 
 clear
 clear
@@ -426,7 +394,7 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
     curl -s ipinfo.io/city >>/etc/xray/city
     curl -s ipinfo.io/org | cut -d " " -f 2-10 >>/etc/xray/isp
     print_install "Memasang Konfigurasi Packet"
-    wget -O /etc/haproxy/haproxy.cfg "https://raw.githubusercontent.com/Arya-Blitar22/cok/main/fire/haproxy.cfg" >/dev/null 2>&1
+    wget -O /etc/haproxy/haproxy.cfg "https://raw.githubusercontent.com/kipas77pro/bckp/main/haproxy.cfg" >/dev/null 2>&1
     wget -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/Arya-Blitar22/cok/main/fire/xray.conf" >/dev/null 2>&1
     sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
@@ -702,10 +670,10 @@ print_success "Swap 1 G"
 function ins_Fail2ban(){
 clear
 print_install "Menginstall Fail2ban"
-apt -y install fail2ban > /dev/null 2>&1
-sudo systemctl enable --now fail2ban
-/etc/init.d/fail2ban restart
-/etc/init.d/fail2ban status
+#apt -y install fail2ban > /dev/null 2>&1
+#sudo systemctl enable --now fail2ban
+#/etc/init.d/fail2ban restart
+#/etc/init.d/fail2ban status
 
 # Instal DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
@@ -725,7 +693,12 @@ print_success "Fail2ban Installed"
 function ins_epro(){
 clear
 print_install "Menginstall ePro WebSocket Proxy"
-    wget -q https://raw.githubusercontent.com/Arya-Blitar22/tiktok/main/babi/install-ws.sh && chmod +x install-ws.sh && ./install-ws.sh >/dev/null 2>&1
+    wget -O /usr/bin/ws "${REPO}media/ws" >/dev/null 2>&1
+    wget -O /usr/bin/tun.conf "${REPO}media/tun.conf" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws.service "${REPO}media/ws.service" >/dev/null 2>&1
+    chmod +x /etc/systemd/system/ws.service
+    chmod +x /usr/bin/ws
+    chmod 644 /usr/bin/tun.conf
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
 wget -O /usr/sbin/ftvpn "${REPO}media/ftvpn" >/dev/null 2>&1
@@ -788,7 +761,7 @@ print_success "All Packet"
 function menu(){
     clear
     print_install "Memasang Menu Packet"
-    wget ${REPO}menu/menu.zip
+    wget https://raw.githubusercontent.com/Arya-Blitar22/st-pusat/main/menu/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin
